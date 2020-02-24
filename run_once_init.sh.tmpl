@@ -7,15 +7,19 @@ if ! which brew ; then
 fi
 {{ end -}}
 
+if ! which ansible ; then
+
 {{ if eq .chezmoi.os "linux" -}}
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
-sudo apt-get install -y software-properties-common
-sudo apt-add-repository --yes --update ppa:ansible/ansible
-sudo apt-get install -y ansible
+    sudo apt-get install -y software-properties-common
+    sudo apt-add-repository --yes --update ppa:ansible/ansible
+    sudo apt-get install -y ansible
 {{ end -}}
 {{ else if eq .chezmoi.os "darwin" -}}
-brew install ansible
+    brew install ansible
 {{ end -}}
+
+fi
 
 
 # # Install Conda
@@ -36,4 +40,5 @@ brew install ansible
 #conda env create -f ansible/env.yml
 #conda activate ansible
 
+ansible-galaxy install -r {{ .chezmoi.sourceDir }}/ansible/requirements.yml
 ansible-playbook -i localhost, --connection=local {{ .chezmoi.sourceDir }}/ansible/workstation.yml

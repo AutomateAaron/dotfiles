@@ -7,9 +7,9 @@
   with_items:
     - git
     - zsh
-    - docker
     - tmux
     - curl
+    - vim
 
 - name: Install Oh-my-zsh
   git:
@@ -31,27 +31,7 @@
     - "https://github.com/zsh-users/zsh-syntax-highlighting.git"
     - "https://github.com/zsh-users/zsh-autosuggestions.git"
     - "https://github.com/zsh-users/zsh-completions.git"
-
-# - name: Install Chezmoi
-#   shell: curl -sfL https://git.io/chezmoi | sh
-#   args:
-#     chdir: "{{ ansible_env.HOME }}"
-#     creates: "{{ ansible_env.HOME }}/bin/chezmoi"
-
-# - name: Initialize Chezmoi
-#   git:
-#     repo: https://github.com/AaronNBrock/dotfiles.git
-#     dest: "{{ ansible_env.HOME }}/.local/share/chezmoi"
-
-# - name: Apply Chezmoi
-#   shell: "{{ ansible_env.HOME }}/bin/chezmoi update"
-
-# - name: Set remote to ssh
-#   git_config:
-#     name: remote.origin.url
-#     repo: "{{ ansible_env.HOME }}/.local/share/chezmoi"
-#     scope: local
-#     value: git@github.com:AaronNBrock/dotfiles.git
+    - "https://github.com/esc/conda-zsh-completion.git"
 
 - name: Create .ssh directory
   file:

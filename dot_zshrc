@@ -8,6 +8,3 @@ done
 
 # apt update && apt install -y curl git
 # curl -sfL https://git.io/chezmoi | sh && ./bin/chezmoi init https://github.com/aaronnbrock/dotfiles && ./bin/chezmoi apply
-
-# >>> conda initialize >>>
-# <<< conda initialize <<<

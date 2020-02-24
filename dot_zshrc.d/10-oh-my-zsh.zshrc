@@ -70,15 +70,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git gcloud kubectl helm zsh-syntax-highlighting zsh-autosuggestions zsh-completions conda-zsh-completion golang terraform docker)
 
-# gcloud plugin
-CLOUDSDK_HOME=/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/
-
 # zsh auto suggestions plugin
 ZSH_AUTOSUGGEST_STRATEGY=(completion)
 ZSH_AUTOSUGGEST_USE_ASYNC=true
-
-# colorize plugin
-ZSH_COLORIZE_TOOL=chroma
 
 source $ZSH/oh-my-zsh.sh
 
@@ -112,8 +106,4 @@ autoload -U compinit && compinit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Enable them sweet colors
-[[ "$TERM" != "xterm" ]] || export TERM=xterm-256color
-[[ "$TERM" != "screen" ]] || export TERM=screen-256color
 
