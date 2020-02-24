@@ -1,0 +1,5 @@
+---
+- name: Setup workstation
+  hosts: all
+  roles:
+    - common

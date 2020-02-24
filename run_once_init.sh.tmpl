@@ -1,0 +1,39 @@
+#!/bin/bash
+
+{{ if eq .chezmoi.os "darwin" -}}
+# Install Homebrew
+if ! which brew ; then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+{{ end -}}
+
+{{ if eq .chezmoi.os "linux" -}}
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+sudo apt-get install -y software-properties-common
+sudo apt-add-repository --yes --update ppa:ansible/ansible
+sudo apt-get install -y ansible
+{{ end -}}
+{{ else if eq .chezmoi.os "darwin" -}}
+brew install ansible
+{{ end -}}
+
+
+# # Install Conda
+# if ! which conda ; then
+#     {{ if eq .chezmoi.os "linux" -}}
+#     curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o /tmp/miniconda3.sh
+#     {{ else if eq .chezmoi.os "darwin" -}}
+#     curl https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o /tmp/miniconda3.sh
+#     {{ end -}}
+
+#     chmod +x /tmp/miniconda3.sh
+#     sh /tmp/miniconda3.sh -b -p ~/miniconda3
+
+#     source ~/miniconda3/etc/profile.d/conda.sh
+# fi
+
+#conda init bash zsh
+#conda env create -f ansible/env.yml
+#conda activate ansible
+
+ansible-playbook -i localhost, --connection=local {{ .chezmoi.sourceDir }}/ansible/workstation.yml
