@@ -68,7 +68,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gcloud kubectl helm zsh-syntax-highlighting zsh-autosuggestions zsh-completions conda-zsh-completion golang terraform docker)
+plugins=(git gcloud kubectl helm zsh-syntax-highlighting zsh-autosuggestions zsh-completions conda-zsh-completion golang terraform docker aws)
 
 # zsh auto suggestions plugin
 ZSH_AUTOSUGGEST_STRATEGY=(completion)
