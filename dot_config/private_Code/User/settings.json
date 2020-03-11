@@ -1,0 +1,7 @@
+{
+    "files.autoSave": "onFocusChange",
+    "editor.formatOnSave": true,
+    "editor.renderWhitespace": "all",
+    "editor.formatOnPaste": true,
+    "window.titleBarStyle": "custom",
+}
