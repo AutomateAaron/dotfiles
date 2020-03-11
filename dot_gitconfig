@@ -5,6 +5,7 @@
 	abbrevCommit = true
 [user]
 	name = Aaron N. Brock
+	email = Contact@AaronNBrock.com
 [pager]
 	log = false
 [alias]
