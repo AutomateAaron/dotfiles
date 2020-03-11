@@ -4,4 +4,5 @@
     "editor.renderWhitespace": "all",
     "editor.formatOnPaste": true,
     "window.titleBarStyle": "custom",
+    "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback', MesloLGS NF",
 }
