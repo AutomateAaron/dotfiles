@@ -1,10 +1,5 @@
-
 setopt +o nomatch
 for file in ~/.zshrc.d/*.(zshrc|zsh|sh); do
     [[ -e $file ]] || continue
-    # echo $file
     source $file
 done
-
-# apt update && apt install -y curl git
-# curl -sfL https://git.io/chezmoi | sh && ./bin/chezmoi init https://github.com/aaronnbrock/dotfiles && ./bin/chezmoi apply
