@@ -3,6 +3,7 @@
 
 ## Startup time
 ```zsh
-❯ time  zsh -i -c exit
-zsh -i -c exit  0.43s user 0.07s system 94% cpu 0.530 total
+❯ time zsh -i -c exit
+zsh -i -c exit  0.21s user 0.05s system 79% cpu 0.331 total
 ```
+<sup>Goal is to keep this under 0.5 total</sup>

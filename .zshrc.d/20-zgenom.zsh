@@ -26,7 +26,7 @@ if ! zgenom saved; then
   # Oh My Zsh
   zgenom ohmyzsh
   # zgenom ohmyzsh plugins/git
-  zgenom ohmyzsh plugins/kubectl
+  # zgenom ohmyzsh plugins/kubectl
   zgenom ohmyzsh plugins/gcloud
   zgenom ohmyzsh plugins/helm
   zgenom ohmyzsh plugins/docker
@@ -37,7 +37,9 @@ if ! zgenom saved; then
 
 fi
 
-### Lazy Loading ###
 
-# alias conda="unalias conda && unalias python && source $HOME/.zshrc.d/lazy/conda-init.zsh && conda"
-# alias python="unalias conda && unalias python && source $HOME/.zshrc.d/lazy/conda-init.zsh && python"
+
+### Lazy Loading Plugins ###
+alias kubectl='unalias kubectl && zgenom ohmyzsh plugins/kubectl && kubectl'
+# alias conda="unalias conda && unalias python && source $HOME/.zshrc.d/50-conda-init.zsh.lazy && conda"
+# alias python="unalias conda && unalias python && source $HOME/.zshrc.d/50-conda-init.zsh.lazy && python"
