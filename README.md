@@ -4,5 +4,5 @@
 ## Startup time
 ```zsh
 ❯ time  zsh -i -c exit
-zsh -i -c exit  0.65s user 0.06s system 94% cpu 0.756 total
+zsh -i -c exit  0.43s user 0.07s system 94% cpu 0.530 total
 ```
