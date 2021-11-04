@@ -55,3 +55,8 @@ if (( $+commands[terraform] ))
 then
   complete -o nospace -C terraform terraform
 fi
+
+### Lazy Loading ###
+
+# alias conda="unalias conda && unalias python && source $HOME/.zshrc.d/lazy/conda-init.zsh && conda"
+# alias python="unalias conda && unalias python && source $HOME/.zshrc.d/lazy/conda-init.zsh && python"
