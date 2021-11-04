@@ -4,4 +4,3 @@ for file in ~/.zshrc.d/*.(zshrc|zsh|sh); do
     source $file
 done
 
-

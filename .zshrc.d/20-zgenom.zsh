@@ -1,13 +1,3 @@
-### Configure plugins ###
-
-# zsh-users/zsh-autosuggestions
-ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion history)
-ZSH_AUTOSUGGEST_USE_ASYNC=true
-
-# ohmyzsh/plugins/nvm
-NVM_LAZY=1
-
-
 ### zgenom ###
 
 # Download zgenom, if it's not there yet.
@@ -45,15 +35,6 @@ if ! zgenom saved; then
   # generate the init script from plugins above
   zgenom save
 
-fi
-
-
-### Non-plugin Auto Completion ###
-
-# Terraform (not using omz plugin since it is out of date)
-if (( $+commands[terraform] ))
-then
-  complete -o nospace -C terraform terraform
 fi
 
 ### Lazy Loading ###

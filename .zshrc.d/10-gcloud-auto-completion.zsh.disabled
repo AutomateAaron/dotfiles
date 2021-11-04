@@ -1,4 +1,0 @@
-# From: https://stackoverflow.com/a/39983421/7607701
-if (( $+commands[gcloud])); then
-  source "$(gcloud info --format="value(installation.sdk_root)")/*.zsh.inc"
-fi
