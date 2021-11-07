@@ -4,3 +4,4 @@ ZSH_AUTOSUGGEST_USE_ASYNC=true
 
 # ohmyzsh/plugins/nvm
 NVM_LAZY=1
+NVM_AUTOLOAD=1
