@@ -7,7 +7,7 @@ load_conda() {
     unalias $lazy_conda_alias
   done
 
-  __conda_prefix="$HOME/.miniconda3"
+  __conda_prefix="$HOME/.miniconda3" # Set your conda Location
 
   # >>> conda initialize >>>
   __conda_setup="$("$__conda_prefix/bin/conda" 'shell.bash' 'hook' 2> /dev/null)"
