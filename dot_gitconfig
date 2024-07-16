@@ -4,5 +4,8 @@
 	decorate = true
 	abbrevCommit = true
 [user]
-	name = Aaron N. Brock
-	email = Contact@AaronNBrock.com
+	name = Aaron
+	email = Aaron@AaronNBrock.com
+	signingkey = ~/.ssh/id_ed2559.pub
+[gpg]
+	format = ssh
