@@ -70,7 +70,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gcloud kubectl helm golang docker aws nvm fast-syntax-highlighting zsh-autosuggestions)
+plugins=(git gcloud kubectl helm golang docker aws nvm fnm fast-syntax-highlighting zsh-autosuggestions)
 
 # Not installing plugin normally as per documentation
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
