@@ -6,6 +6,6 @@
 [user]
 	name = Aaron
 	email = Aaron@AaronNBrock.com
-	signingkey = ~/.ssh/id_ed2559.pub
+	signingkey = ~/.ssh/id_ed25519.pub
 [gpg]
 	format = ssh
