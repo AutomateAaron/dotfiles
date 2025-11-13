@@ -1,0 +1,50 @@
+#!/bin/sh
+{{ if eq .chezmoi.os "darwin" }}
+# macOS-specific code
+{{ else if eq .chezmoi.os "linux" }}\
+{{   if eq .chezmoi.osRelease.id "debian" }}
+# Debian-specific code
+{{   else if eq .chezmoi.osRelease.id "fedora" }}
+# Fedora-specific code
+
+# Install zsh
+if ! command -v zsh >/dev/null 2>&1
+then
+    echo "Installing zsh..."
+    sudo dnf install -y zsh
+else
+    echo "Zsh already installed"
+fi
+
+# Install Docker (Source: https://docs.docker.com/engine/install/fedora/)
+if ! command -v docker >/dev/null 2>&1
+then
+    echo "Installing docker..."
+    sudo dnf remove docker \
+        docker-client \
+        docker-client-latest \
+        docker-common \
+        docker-latest \
+        docker-latest-logrotate \
+        docker-logrotate \
+        docker-selinux \
+        docker-engine-selinux \
+        docker-engine
+
+    sudo dnf -y install dnf-plugins-core
+    sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+    sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    sudo systemctl enable --now docker
+
+    echo "Adding user to group"
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+else
+    echo "Docker already installed"
+fi
+
+{{   end }}
+{{ end }}
+
+echo "Changing shell to zsh..."
+chsh -s /bin/zsh
