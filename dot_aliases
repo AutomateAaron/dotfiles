@@ -17,5 +17,5 @@ alias k='kubectl'
 # Terraform
 alias tf='terraform'
 
-# Dotfile Management
-alias dot='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+# Codium
+alias code='codium'
